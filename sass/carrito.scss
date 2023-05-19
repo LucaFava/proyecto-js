@@ -1,0 +1,106 @@
+// CARRITO
+
+$titulo: 'Roboto Condensed', sans-serif;
+$texto:'Roboto', sans-serif;
+$bold:  'Roboto', sans-serif;
+
+
+h1{
+    font-family: $titulo;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+.contenedor-carrito{
+    display: grid;
+    grid-template-rows: 1fr;
+    row-gap: 4rem;
+    .contenedor-producto{
+        margin: 0 3rem;
+        border-color: black;
+        border-radius: 2rem;
+        border-style: groove;
+        border: 1rem 1rem 1rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .img{
+            img{
+                border-radius: 2rem;
+                width: 10rem;
+            }
+        }
+        .titulo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: $texto;
+            p{
+                font-size: 1.2rem;
+            }
+            h2{
+                font-family: $texto;
+            }
+        }
+        .precio{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: $texto;
+            p{
+                font-size: 1.2rem;
+            }
+            h2{
+                font-family: $texto;
+            }
+        }
+        .icono-remover{
+            padding: 2rem;
+            .bi{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+.botones{
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+    .boton-comprar{
+        padding:  0 1rem;
+        .btn{
+            width: 8rem;
+            height: 3rem;
+        }
+    }
+    .total{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 15rem;
+        font-size: 2rem;
+        background-color: rgb(192, 192, 192);
+        border-radius: 2rem;
+        h3{
+            padding: .5rem;
+            font-family: $texto;
+        }
+    }
+}
+
+.comprado{
+    color: green;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: $texto;
+
+}
+
+
+.disable{
+    display: none;
+}

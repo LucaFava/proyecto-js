@@ -1,0 +1,163 @@
+// PALETA DE COLORES (OPCIÓN 1)
+// .color1 { #f9930a };
+// .color2 { #e48208 };
+// .color3 { #cf7105 };
+// .color4 { #b95f03 };
+// .color5 { #a44e00 };
+
+$titulo: 'Roboto Condensed', sans-serif;
+$texto:'Roboto', sans-serif;
+$bold:  'Roboto', sans-serif;
+
+
+body{
+    margin: 0;
+}
+// ESTILOS DEL HEADER
+.header{
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    height: 4rem;
+    padding: 1rem;
+    .lista-links{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        a{
+            text-decoration: none;
+        }
+    }
+}
+// -----------------------------------
+// ESTILOS DE LO DESTACADO
+.seccion-destacado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),
+    url(../img/kobe\ 6\ proto\ grinch\ destacado.webp);
+    background-size: 100vw 100vh;
+    .titulo{
+        font-family: $bold;
+        padding: 2rem;
+        h1{
+            font-size: 4rem;
+            color: white;
+        }
+    }
+    .contenedor-destacado{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .img-destacado{
+            border-radius: 1rem;
+            img{
+                width: 45rem;
+                height: 25rem;
+                border-radius: 1.5rem;
+                padding:  0rem 1rem;
+            }
+        }
+    }
+    .contenedor-boton{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        .titulo-destacado{
+            h2{
+                color: yellowgreen;
+                font-family: $titulo;
+                font-size: 5rem;
+            }
+        }
+        .btn{
+            width: 12rem;
+            height: 3rem;
+        }
+    }
+}
+// ESTILOS DEL NUEVO LANZAMIENTO
+
+.titulo-lanzamiento{
+    padding: 5rem;
+    text-align: center;
+    font-family: $titulo;
+    h2{
+        font-size: 4rem;
+    }
+}
+
+.section-lanzamiento{
+    width: 100%;
+    height: 100vh;
+    .contenedor-lanzamiento{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .div1{
+            background: linear-gradient(rgba(5,7,12,0.30),rgba(5,7,12,0.30)),
+            url(../img/lebron\ 20\ vertical.jpg);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 20rem;
+                height: 30rem;
+                border-radius: 1rem;
+                box-shadow: -1px 14px 30px -5px rgba(0,0,0,0.75);
+                -webkit-box-shadow: -1px 14px 30px -5px rgba(0,0,0,0.75);
+                -moz-box-shadow: -1px 14px 30px -5px rgba(0,0,0,0.75);
+            }
+            p{
+                color: white;
+                font-size: 3rem;
+                font-family: $titulo
+            }
+            .btn{
+                width: 10rem;
+                height: 3rem;
+            }
+        }
+        .div2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(rgba(5,7,12,0.30),rgba(5,7,12,0.30)),
+            url(../img/mamba.jpg);
+            img{
+                width: 20rem;
+                height: 30rem;
+                border-radius: 1rem;
+                box-shadow: -1px 14px 30px -5px rgba(0,0,0,0.75);
+                -webkit-box-shadow: -1px 14px 30px -5px rgba(0,0,0,0.75);
+                -moz-box-shadow: -1px 14px 30px -5px rgba(0,0,0,0.75);
+            }
+            p{
+                color: white;
+                font-size: 3rem;
+                font-family: $titulo
+            }
+            .btn{
+                width: 10rem;
+                height: 3rem;
+            }
+        }
+    }
+}
+.seccion-productos{
+    width: 100%;
+    height: 100vh;
+    .contenedor-productos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

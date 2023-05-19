@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+<!-- BOOSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<!-- Link css -->
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+        <!-- HEADER -->
+<section class="header">
+    <article class="contenedor-logo">
+        <img src="" alt="logo">
+    </article>
+    <article class="links">
+        <ul class="lista-links">
+            <li><a href="../index.html">Destacados</a></li>
+            <li><a href="./casacas.html">Camisetas</a></li>
+            <li><a href="./calzado.html">Calzado</a></li>
+            <li><a href="./accesorios.html">Accesorios</a></li>
+        </ul>
+    </article>
+    <article class="buscador">
+    </article>
+    <article class="carrito">
+        <a href="./carrito.html">Carrito</a>
+    </article>
+</section>
+<!-- ------------------------------- -->
+<main>
+<!-- CARRITO -->
+<h1>CARRITO</h1>
+<div class="carrito-vacio">
+    <p>El carrito esta vacio.</p>
+</div>
+<section class="contenedor-carrito disable">
+    <article class="contenedor-producto">
+        <div class="img">
+            <img src="../img/kd15.webp" alt="kd15">
+        </div>
+        <div class="titulo">
+            <p>Nombre</p>
+            <h2>NIKE KD15</h2>
+        </div>
+        <div class="precio">
+            <p>Precio</p>
+            <h2>$72000</h2>
+        </div>
+        <div class="icono-remover">
+            <button class="btn btn-danger" id="eliminar"><i class="bi bi-trash"></i></button>
+        </div>
+    </article>
+</section>
+<section class="botones disable">
+    <article class="boton-comprar">
+        <button class="btn btn-primary" id="comprar">Comprar</button>
+        <button class="btn btn-secondary" id="vaciar">Vaciar carrito</button>
+    </article>
+    
+    <article class="total">
+       <h3>total</h3>
+       <p></p>
+        
+    </article>
+</section>
+
+<p class="comprado disable">MUCHAS GRACIAS POR TU COMPRA!!, vuelva pronto</p>
+</main>
+
+<script src="../carrito.js"></script>
+</body>
+</html>
