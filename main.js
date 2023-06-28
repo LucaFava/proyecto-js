@@ -1,5 +1,5 @@
 // PRODUCTOS
-// PRODUCTOS
+
 const productos = [
     {
         id: "casaca1",
@@ -289,9 +289,10 @@ const productos = [
 // DIBUJAR PRODUCTOS
 
 const sectionProd = document.querySelector(".productos")
+// botones agregar ==>
+const botonesAgregar = document.querySelectorAll(".boton-agregar")
 
 
-cargarProductos()
 function cargarProductos() {
 
     productos.forEach((producto)=>{
@@ -307,49 +308,113 @@ function cargarProductos() {
             <p>$${producto.precio}</p>
         </div>
         <div class="boton">
-            <button id="${producto.id}"><i class="bi bi-cart-plus-fill"></i></button>
+            <button id="${producto.id}" class="boton-agregar"><i class="bi bi-cart-plus-fill"></i></button>
         </div>
     </article>`
        sectionProd.appendChild (articleProd)
     })
+    eventoBotones()
+    console.log(botonesAgregar);
 }
+cargarProductos(productos)
+
+
 
 
 
 // FUNCIONES DE FILTRADO
 
 
-
 function filtrarProductos(categoria) {
-    const productosFiltrados = productos.filter((producto) => producto.categoria === categoria)
-   sectionProd.innerHTML = ""
+    sectionProd.innerHTML= ""
+
+    const productosFiltrados = productos.filter (producto => producto.categoria === categoria)
+console.log(productosFiltrados);
     productosFiltrados.forEach((producto)=>{
-        const articleProd = document.createElement ("article")
-        articleProd.classList.add("card")
-        articleProd.innerHTML = `
+        const article = document.createElement("article")
+        article.classList.add ("card")
+        article.innerHTML = `
         <article class="card">
-           <div class="img-card">
-                <img src="${producto.imagen}" alt="productos">
-            </div>
-            <div class="nombre-card">
-                <h3>${producto.nombre}</h3>
-                 <p>$${producto.precio}</p>
-            </div>
-            <div class="boton">
-                <button id="${producto.id}"><i class="bi bi-cart-plus-fill"></i></button>
-            </div>
-        </article>
-        `
-        sectionProd.appendChild(articleProd)
+        <div class="img-card">
+            <img src="${producto.imagen}" alt="productos">
+        </div>
+        <div class="nombre-card">
+            <h3>${producto.nombre}</h3>
+            <p>$${producto.precio}</p>
+        </div>
+        <div class="boton">
+            <button id="${producto.id}" class="boton-agregar"><i class="bi bi-cart-plus-fill"></i></button>
+        </div>
+    </article>`
+    sectionProd.append(article)
     })
+    eventoBotones()
+    }
+
+
+
+    // llamar a los botones agregar con una función ya que cada vez que se utilizan los botones categorias los botones agregar de las cards se generan de nuevo
+    function eventoBotones() {
+        const botonesAgregar = document.querySelectorAll(".boton-agregar");
     
+        botonesAgregar.forEach((boton)=>{
+            boton.addEventListener("click", agregarCarrito)
+        
+        })
+    }
+
+    // AGREGAR AL CARRITO
+let carrito;
+const carritoLS = localStorage.getItem("carrito")
+if (carritoLS) {
+    carrito = JSON.parse(carritoLS)
+}else{
+    carrito = []
 }
-filtrarProductos()
 
-// MOSTRAR TODOS
 
-function mostrarTodos (){
-    return (cargarProductos())
+
+
+
+
+function agregarCarrito(e) {
+    const botonId = e.currentTarget.id
+    
+    const productosAgregados = productos.find(producto => producto.id === botonId)
+
+    if(carrito.some(producto => producto.id === botonId)) {
+        const indexProd = carrito.findIndex(producto => producto.id === botonId)
+        carrito[indexProd].cantidad++
+        console.log(carrito);
+
+    }else{
+        productosAgregados.cantidad = 1
+        carrito.push(productosAgregados)
+    }
+    console.log(carrito);
+    
+
+    localStorage.setItem ("carrito", JSON.stringify (carrito))
+    // toastify
+    Toastify({
+        text: "Se agregó al carrito correctamente",
+        duration: 3000,
+        destination: "./carrito.html",
+        newWindow: false,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
 }
 
-// AGREGAR AL CARRITO
+// -------------------
+
+
+
+
+

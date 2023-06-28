@@ -1,3 +1,13 @@
+.inactivo{
+    display: none;
+    display: none;
+}
+.carrito-vacio{
+    margin: 1.5rem;
+    p{
+        font-size: 2rem;
+    }
+}
 // HEADER CARRITO
 .header-carrito{
     display: flex;
@@ -52,147 +62,142 @@
 }
 // SECCION DE PRODUCTOS AGREGADOS
 
+
 .carrito-contenedor{
-    margin: 2rem;
-    display: grid;
-    grid-template-areas: "productos precio";
     .productos-agregados{
-        grid-area: productos;
-        width: 50rem;
-        display: grid;
-        row-gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
         .card-agregados{
-            border-style: solid;
-            border-width: .2rem;
-            border-radius: 1.2rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            height: 10rem;
+            margin: 1rem;
+            border-style: solid;
+            border-radius: 1rem;
             .img-agregados{
-                width: 15rem;
                 display: flex;
                 p{
-                    font-size: 1.2rem;
-                    font-weight: 500;
-                    padding: .4rem;
+                    padding: 1rem;
+                    font-weight: 600;
+                    font-size: 1.3rem;
                 }
                 img{
-                    border-radius: 1rem 0rem 0rem 1rem;
-                    width: 8rem;
+                    border-radius: .7rem 0rem 0rem .7rem;
+                    width: 10rem;
                 }
             }
             .cantidad{
-                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
                 h2{
-                    font-size: 1.1rem;
-                }
-                p{
-                    padding: 1rem;
+                    font-size: 1.2rem;
                 }
             }
             .precio{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 p{
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                 }
             }
             .boton-eliminar{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-style: solid;
-                border-width: 0 0 0 1px;
-                height: 5rem;
-                margin: 1rem;
+                flex-direction: column;
+                padding: 2rem;
                 button{
-                    border: none;
+                    background-color: red;
+                    border-radius: 1rem;
                     height: 3rem;
                     width: 3rem;
-                    border-radius: 2rem;
-                    margin: .5rem;
+                    border-color: white;
                     .bi{
-                        font-size: 1.8rem;
+                        font-size: 1.5rem;
+                        color: white;
                     }
                 }
             }
         }
     }
 }
-// RESUMEN DE COMPRA
+
+// secciones de compras
+
 .precio-final{
-    position: fixed;
-    right: 3rem;
-    grid-area: precio;
-    background-color: white;
-    box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.75);
-    width: 22rem;
-    height: 15rem;
-    border-radius: 1rem;
-    margin-left: 4rem;
+    margin: 2rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    .titulo-precio{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        h3{
-            border-style: solid;
-            border-width: 0 0 2px 0;
-            width: 20rem;
-        }
-    }
-    .total{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        h4{
-            margin: .7rem;
-        }
-        p{
-            margin: .7rem;
-            font-size: 1.4rem;
-        }
-    }
-    .botones{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        #comprar{
-            width: 8rem;
-            height: 3rem;
-            border-radius: 1rem;
-            border-style: solid;
-            border-color: green;
-            font-weight: 600;
-            color: green;
-            .bi{
+    justify-content: center;
+    border: none;
+    border-radius: 2rem;
+    height: 15rem;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    .article-precio{
+        .titulo-precio{
+            text-align: center;
+            h3{
+                width: 25rem;
+                border-width: 0 0 .1rem 0;
                 padding: .5rem;
-                font-size: 1.1rem;
-            }
-            &:hover{
-                transform: scale(1.1);
-                background-color: green;
-                color: white;
-                transition: all .3s;
+                border-style: solid;
             }
         }
-        #vaciar{
-            width: 9rem;
-            height: 3rem;
-            border-radius: 1rem;
-            border-style: solid;
-            border-color: red;
-            font-weight: 600;
-            color: red;
-            &:hover{
-                transform: scale(1.1);
-                background-color: red;
-                color: white;
-                transition: all .3s;
+        .total{
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                margin: 0;
+                font-weight: 600;
+                font-size: 1.3rem;
+            }
+        }
+        .botones{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            #comprar{
+                border-radius: 1rem;
+                margin: 1rem 2rem;
+                height: 3rem;
+                width: 8rem;
+                font-weight: 600;
+                border-style: solid;
+                color: green;
+                border-color: green;
+                .bi{
+                    font-size: 1.1rem;
+                }
+                &:hover{
+                    transition: all .3s;
+                    transform: scale(1.1);
+                    background-color: green;
+                    color: white;
+                }
+            }
+            #vaciar{
+                border-radius: 1rem;
+                height: 3rem;
+                width: 9rem;
+                font-weight: 600;
+                border-style: solid;
+                color: red;
+                border-color: red;
+                .bi{
+                    font-size: 1.1rem;
+                }
+                &:hover{
+                    transition: all .3s;
+                    transform: scale(1.1);
+                    background-color: red;
+                    color: white;
+                }
             }
         }
     }

@@ -5,7 +5,6 @@
 }
 
 .activo {
-  background-color: rgb(49, 13, 0);
   border-radius: 2rem;
   box-shadow: 0px 5px 12px 1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 5px 12px 1px rgba(0, 0, 0, 0.75);
@@ -153,6 +152,18 @@
   color: white;
 }
 
+.inactivo {
+  display: none;
+  display: none;
+}
+
+.carrito-vacio {
+  margin: 1.5rem;
+}
+.carrito-vacio p {
+  font-size: 2rem;
+}
+
 .header-carrito {
   display: flex;
   align-items: center;
@@ -206,148 +217,138 @@
   font-weight: 700;
 }
 
-.carrito-contenedor {
-  margin: 2rem;
-  display: grid;
-  grid-template-areas: "productos precio";
-}
 .carrito-contenedor .productos-agregados {
-  grid-area: productos;
-  width: 50rem;
-  display: grid;
-  row-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .carrito-contenedor .productos-agregados .card-agregados {
-  border-style: solid;
-  border-width: 0.2rem;
-  border-radius: 1.2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  height: 10rem;
+  margin: 1rem;
+  border-style: solid;
+  border-radius: 1rem;
 }
 .carrito-contenedor .productos-agregados .card-agregados .img-agregados {
-  width: 15rem;
   display: flex;
 }
 .carrito-contenedor .productos-agregados .card-agregados .img-agregados p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding: 0.4rem;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 .carrito-contenedor .productos-agregados .card-agregados .img-agregados img {
-  border-radius: 1rem 0rem 0rem 1rem;
-  width: 8rem;
+  border-radius: 0.7rem 0rem 0rem 0.7rem;
+  width: 10rem;
 }
 .carrito-contenedor .productos-agregados .card-agregados .cantidad {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .carrito-contenedor .productos-agregados .card-agregados .cantidad h2 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
-.carrito-contenedor .productos-agregados .card-agregados .cantidad p {
-  padding: 1rem;
+.carrito-contenedor .productos-agregados .card-agregados .precio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .carrito-contenedor .productos-agregados .card-agregados .precio p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .carrito-contenedor .productos-agregados .card-agregados .boton-eliminar {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-style: solid;
-  border-width: 0 0 0 1px;
-  height: 5rem;
-  margin: 1rem;
+  flex-direction: column;
+  padding: 2rem;
 }
 .carrito-contenedor .productos-agregados .card-agregados .boton-eliminar button {
-  border: none;
+  background-color: red;
+  border-radius: 1rem;
   height: 3rem;
   width: 3rem;
-  border-radius: 2rem;
-  margin: 0.5rem;
+  border-color: white;
 }
 .carrito-contenedor .productos-agregados .card-agregados .boton-eliminar button .bi {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .precio-final {
-  position: fixed;
-  right: 3rem;
-  grid-area: precio;
-  background-color: white;
-  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.75);
-  width: 22rem;
-  height: 15rem;
-  border-radius: 1rem;
-  margin-left: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.precio-final .titulo-precio {
+  margin: 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  border: none;
+  border-radius: 2rem;
+  height: 15rem;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+}
+.precio-final .article-precio .titulo-precio {
   text-align: center;
 }
-.precio-final .titulo-precio h3 {
-  border-style: solid;
-  border-width: 0 0 2px 0;
-  width: 20rem;
-}
-.precio-final .total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-.precio-final .total h4 {
-  margin: 0.7rem;
-}
-.precio-final .total p {
-  margin: 0.7rem;
-  font-size: 1.4rem;
-}
-.precio-final .botones {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.precio-final .botones #comprar {
-  width: 8rem;
-  height: 3rem;
-  border-radius: 1rem;
-  border-style: solid;
-  border-color: green;
-  font-weight: 600;
-  color: green;
-}
-.precio-final .botones #comprar .bi {
+.precio-final .article-precio .titulo-precio h3 {
+  width: 25rem;
+  border-width: 0 0 0.1rem 0;
   padding: 0.5rem;
+  border-style: solid;
+}
+.precio-final .article-precio .total {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.precio-final .article-precio .total p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.precio-final .article-precio .botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.precio-final .article-precio .botones #comprar {
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  height: 3rem;
+  width: 8rem;
+  font-weight: 600;
+  border-style: solid;
+  color: green;
+  border-color: green;
+}
+.precio-final .article-precio .botones #comprar .bi {
   font-size: 1.1rem;
 }
-.precio-final .botones #comprar:hover {
+.precio-final .article-precio .botones #comprar:hover {
+  transition: all 0.3s;
   transform: scale(1.1);
   background-color: green;
   color: white;
-  transition: all 0.3s;
 }
-.precio-final .botones #vaciar {
-  width: 9rem;
-  height: 3rem;
+.precio-final .article-precio .botones #vaciar {
   border-radius: 1rem;
-  border-style: solid;
-  border-color: red;
+  height: 3rem;
+  width: 9rem;
   font-weight: 600;
+  border-style: solid;
   color: red;
+  border-color: red;
 }
-.precio-final .botones #vaciar:hover {
+.precio-final .article-precio .botones #vaciar .bi {
+  font-size: 1.1rem;
+}
+.precio-final .article-precio .botones #vaciar:hover {
+  transition: all 0.3s;
   transform: scale(1.1);
   background-color: red;
   color: white;
-  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=estilos.css.map */
